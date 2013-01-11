@@ -1,0 +1,22 @@
+<tr>
+	<td class = "site">
+		<span class = "title"><%= link_to site.title, site, :target => "_BLANK" %> </span>
+		<span class = "timestamp">
+			Created <%= time_ago_in_words(site.created_at) %> ago
+		</span>
+	</td>
+	<% if current_user?(site.user) %>
+	<td>
+		<%=image_tag("img/icon3.png", :class => "icon3")%>
+		<%= link_to "Редактировать", edit_site_path(site),:class => "update_button"%>
+	</td>
+	<td>
+		<%=image_tag("img/icon1.png", :class => "icon")%>
+		<%= link_to "Удалить", site, :method => :delete,
+									:confirm => "Вы уверены?",
+									:title => site.title,
+									:class => "delete_button"
+									%>
+	</td>
+	<% end %>
+</tr>

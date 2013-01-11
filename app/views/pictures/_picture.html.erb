@@ -1,0 +1,6 @@
+<tr>
+	<td><%= image_tag (picture.image), :size=>"40x40", :class => "small_img", :id => picture.image %></td>
+	<td><%= link_to 'Показать', picture,:class=>"button_show", :target => "_blank" %></td>
+	<td>
+	<%= link_to 'Удалить', picture, confirm: 'Вы уверены?', method: :delete,:class=>"delete_button icon_off" %></td>
+</tr>

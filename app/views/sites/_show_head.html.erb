@@ -1,0 +1,14 @@
+   <%= stylesheet_link_tag 'custom-theme/jquery-ui-1.8.19.custom',  :media => 'screen' %>
+   <%= stylesheet_link_tag "sites_css/#{@site.id}",  :media => 'screen' %> 
+   
+   <%= javascript_include_tag "jquery-1.7.2.min" %>
+   <%= javascript_include_tag "jquery-ui-1.8.19.custom.min" %>
+   <script type="text/javascript">
+	$(document).ready(function() {  
+	$(".run_tabs").tabs();
+	$("#datepicker").datepicker({inline: true});
+    $("#accordion").accordion({ header: "h3" });
+	});
+	</script>
+
+   <%= javascript_include_tag "application" %>

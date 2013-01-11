@@ -1,0 +1,42 @@
+﻿<%= render 'shared/error_messages', :object => f.object %>
+<div class="change round">
+<div class="formRow">
+	<div class="label">
+		<label for="name">Логин:</label>
+	</div>
+            
+	<div class="field">
+		<%= f.text_field :name %>
+	</div>
+</div><br>
+
+<div class="formRow">
+	<div class="label">
+		<label for="pass">Мейл:</label>
+	</div>
+            
+	<div class="field">
+		<%= f.text_field :email %>
+	</div>
+</div> <br>       
+		
+<div class="formRow">
+	<div class="label">
+		<label for="pass">Пароль:</label>
+	</div>
+            
+	<div class="field">
+		<%= f.password_field :password %>
+	</div>
+</div><br>
+
+<div class="formRow">
+	<div class="label">
+		<label for="pass">Подтверждение пароля:</label>
+	</div>
+            
+	<div class="field">
+		<%= f.password_field :password_confirmation %>
+	</div>
+</div><br>
+</div>

@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "custom-theme/"+@site.theme+"/jquery-ui-1.8.20.custom.css",:media => "screen" %>
+<div id = "main" class = "margin_auto">
+    <div id="columns">
+		<div id="column_head" class = "column">
+			<%= @site.header_html.html_safe %>
+		</div>
+        
+        <div id="column_left" class="column">
+            <%= @site.left_column_html.html_safe %>
+        </div>
+
+        <div id="column_center" class="column">
+            <%= @site.central_column_html.html_safe %>
+        </div>
+        
+        <div id="column_right" class="column">
+            <%= @site.right_column_html.html_safe %>
+        </div>
+		
+		<div id = "column_footer" class = "column">
+		   <%= @site.footer_html.html_safe %>
+	   </div>
+    </div>
+</div> 
+<br/>

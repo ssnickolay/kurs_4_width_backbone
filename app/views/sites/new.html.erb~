@@ -1,0 +1,397 @@
+﻿<%= form_for (@site) do |f| %>
+	<div><%= f.hidden_field :title %></div>
+	<div><%= f.hidden_field :css %></div>
+	<div><%= f.hidden_field :theme %></div>
+	<div><%= f.hidden_field :header_html %></div>
+	<div><%= f.hidden_field :left_column_html %></div>
+	<div><%= f.hidden_field :central_column_html %></div>
+	<div><%= f.hidden_field :right_column_html %></div>
+	<div><%= f.hidden_field :footer_html %></div>
+	<div class="actions"><%= f.submit "Ok", :id => "create_site" %></div>
+<% end %>
+<div id = "text_memmory"><%= @site_title %></div>
+<div id = "message"></div>
+<div id="picker"></div>
+	<div id="wrapper">
+    	<div id="mask">
+        	<div id="box1" class="box">
+            	<a name="box1"></a>
+
+
+
+        <div class="content"> <!--settings-->
+					<div class="inner">Шаг 1<br>
+					<div class="hideWrap">
+						<a class="hideBtn" href="#"></a>
+						<div class="hideCont"><span>Задайте ширину (px):</span>
+
+						<div class="formRow">
+							<p>Cайта:</p>
+							<div class="field">
+								<input type="text" class = "normal_field" name="#main" id="input_main" />
+							</div>
+						</div>
+						<br>
+
+						<div class="formRow">
+							<p>Левой колонки:</p>
+							<div class="field">
+								<input type="text" class = "normal_field" name="#column_left" id="left" />
+							</div>
+						</div>
+						<br>
+
+						<div class="formRow">
+							<p>Центр.колонки:</p>
+							<div class="field">
+								<input type="text" class = "normal_field" name="#column_center" id="center" />
+							</div>
+						</div>
+						<br>
+
+						<div class="formRow">
+							<p>Правой колонки:</p>
+							<div class="field">
+								<input type="text" class = "normal_field" name="#column_right" id="right" />
+							</div>
+						</div>
+						<p class="help_p">(Максимально доступный отступ между блоками: <span>11</span> px)</p>
+						<span>Задайте расстояние между колонками (px):</span>
+						<div class="formRow">
+
+							<div class="field">
+								<input type="text" class = "normal_field" name="#marg" id="marg" />
+							</div>
+						</div>
+						<button  class="large button blue centr" id="add" href="#">Применить</button>
+						</div>
+					</div>
+
+					</div>
+
+				</div>
+            </div><!-- box1 -->
+            <div id="box2" class="box"><!-- box2 -->
+            	<a name="box2"></a>
+
+                <div class="content">
+					<div class="inner">Шаг 2
+						<div class="hideWrap">
+							<a class="hideBtn" href="#"></a>
+							<div class="hideCont">
+								<span>Задайте параметры блока:</span>
+								<div class="message" id="message1">Ширина блока и отступов превысила ширину колонки!</div>
+								<div class="formRow">
+									<p>Ширина:</p>
+									<div class="field">
+										<input type="text" class = "normal_field" name="block_w" id="width-step2"/>
+									</div>
+								</div>
+								<div class="formRow">
+									<p>Высота:</p>
+									<div class="field">
+										<input type="text" class = "normal_field" name="block_w" id="height-step2"/>
+									</div>
+								</div>
+								<span>Задайте отступы (px):</span>
+
+								<div class="formRow">
+									<p>Левый:</p>
+									<div class="field">
+										<input type="text" class = "normal_field disabled_enabled" name="left-step2" id="left-step2"/>
+									</div>
+								</div>
+								<br>
+								<div class="formRow">
+									<p>Верхний:</p>
+									<div class="field">
+										<input type="text" class = "normal_field" name="top_m" id="top-step2" />
+									</div>
+								</div>
+								<br>
+								<div class="formRow">
+									<p>Нижний:</p>
+									<div class="field">
+										<input type="text" class = "normal_field" name="bottom_m" id="bottom-step2" />
+									</div>
+								</div>
+								<br>
+								<div class="formRow">
+									<input type="checkbox" name="option" value="a" checked id = "ch_margin_auto">Центрировать
+								</div>
+								<br>
+								<a  class="large button blue centr" id="add_2" href="#">Применить</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class = "panelka_content" id='panelka'> <!--panelka-->
+					<div class="panelka_inner">
+						<table class="panel">
+							<tr>
+								<td><div class="button_step2 slide_on"><%=image_tag("img/1.png", :title => "Вставить аккордеон")%></div></td>
+								<td class = "pod_menu-step2"><div class='formRow' ><p>Задайте кол-во пунктов:</p><div class='field'><input type='text' class = 'step_field' name='acc_punkt'/></div></div><div class="button blue ok" id = "widget_accardion">Ok</div></td>
+							</tr>
+							<tr>
+								<td><div class="button_step2 slide_on"><%=image_tag("img/2.png", :title => "Вставить меню")%></div></td>
+								<td class = "pod_menu-step2"><div class='formRow'><p>Задайте кол-во пунктов:</p><div class='field'><input type='text' class = 'step_field' name='tabs_punkt'/></div></div><div class="button blue ok" id = "widget_tabs">Ok</div></td>
+							</tr>
+							<tr>
+								<td><div id = "widget_calendar" class="button_step2"><%=image_tag("img/3.png", :title => "Вставить календарь")%></div></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><div id = "widget_text" class="button_step2"><%=image_tag("img/4.png", :title => "Вставить текстовый блок")%></div></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><div class="button_step2 slide_on"><%=image_tag("img/5.png", :title => "Вставить кнопку")%></div></td>
+								<td class = "pod_menu-step2"><br/><div class='formRow'><p>Ссылка:</p><div class='field'><input type='text' class = 'step_field button_field' name='tabs_punkt'/></div></div><div class="button blue ok" id = "widget_button">Ok</div></td>
+							</tr>
+							<tr>
+								<td><div class="button_step2 slide_on" id= "img_button"><%=image_tag("img/6.png", :title => "Вставить картинку")%></div></td>
+							</tr>
+						</table>
+						<div id = "step2_img_block"><%= render "pictures/index_pictures" %></div>
+					</div>
+				</div>
+
+            </div><!-- box3 -->
+            <div id="box3" class="box">
+            	<a name="box3"></a>
+                <div class="content cont2">
+					<div class="inner inn2">Шаг 3<br>
+						<div class="hideWrap">
+							<a class="hideBtn" href="#"></a>
+							<div class="hideCont">
+							<span>Настройки оформления:</span>
+								<div class="formRow">
+									<ul>
+										<li id = "setting_body" class = "bigger step3_settings step3_settings_selected">Общие </li>
+										<li id = "setting_main" class = "bigger step3_settings ">Сайта</li>
+										<li id = "setting_header" class = "bigger step3_settings ">Шапки(меню)</li>
+										<li id = "setting_left" class = "bigger step3_settings ">Левой колонки</li>
+										<li id = "setting_center" class = "bigger step3_settings ">Центральной колонки </li>
+										<li id = "setting_right" class = "bigger step3_settings ">Правой колонки </li>
+										<li id = "setting_footer" class = "bigger step3_settings ">Футера</li>
+									</ul>
+									<span>Темы:</span><br>
+									<table id = "styles_name"><!--Разные css -->
+										<tr>
+											<td id = "base" class="theme"><%=image_tag("img/theme/t1.jpg", :title => "Базовая",:class => "light")%></td>
+											<td id = "krasnenko" class="theme"><%=image_tag("img/theme/t2.jpg", :title => "Красная",:class => "light")%></td>
+											<td id = "yellow" class="theme"><%=image_tag("img/theme/t3.jpg", :title => "Желтая",:class => "light")%></td>
+											<td id = "sea" class="theme"><%=image_tag("img/theme/t4.jpg", :title => "Бирюзовая",:class => "light")%></td>
+										</tr>
+										<tr>
+											<td id = "green" class="theme"><%=image_tag("img/theme/t5.jpg", :title => "Зеленая",:class => "light")%></td>
+											<td id = "sky" class="theme"><%=image_tag("img/theme/t6.jpg", :title => "Голубая",:class => "light")%></td>
+											<td id = "blue" class="theme"><%=image_tag("img/theme/t7.jpg", :title => "Синяя",:class => "light")%></td>
+											<td id = "violet" class="theme"><%=image_tag("img/theme/t8.jpg", :title => "Фиолетовая",:class => "light")%></td>
+										</tr>
+										<tr>
+											<td id = "pink" class="theme"><%=image_tag("img/theme/t9.jpg", :title => "Розовая",:class => "light")%></td>
+											<td id = "black" class="theme"><%=image_tag("img/theme/t10.jpg", :title => "Черная",:class => "light")%></td>
+										</tr>
+									</table>
+									<table id = "styles_link">
+
+										<tr id = "base" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/jquery-ui-1.8.19.custom.css",:media => "screen" %>
+
+											</td>
+										</tr>
+										<tr id = "krasnenko" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/krasnenko/jquery-ui-1.8.20.custom.css",:media => "screen" %>
+											</td>
+										</tr>
+										<tr id = "yellow" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/yellow/jquery-ui-1.8.20.custom.css",:media => "screen" %>
+											</td>
+										</tr>
+										<tr id = "sea" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/sea/jquery-ui-1.8.20.custom.css",:media => "screen" %>
+											</td>
+										</tr>
+										<tr id = "green" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/green/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+										<tr id = "sky" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/sky/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+										<tr id = "blue" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/blue/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+										<tr id = "violet" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/violet/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+										<tr id = "pink" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/pink/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+										<tr id = "black" class="invisible">
+											<td><%= stylesheet_link_tag "custom-theme/black/jquery-ui-1.8.20.custom.css",:media => "screen" %></td>
+										</tr>
+									</table>
+								</div>
+								<div class="dop">
+									<span></span>
+									<div class="formRow">
+
+										<div class="formRow">
+											<input type="checkbox" name="option" value="a" checked id = "ch_shadow" class = "ch_step3"> Тень
+										</div>
+										<div class="formRow">
+											<input type="checkbox" name="option" value="a" checked id = "ch_glow" class = "ch_step3"> Свечение
+										</div>
+										<div class="formRow">
+											<p>Cкругление углов:</p>
+											<div class="field">
+												<input type="text" class = "normal_field dop_in " name="bottom_m" id = "input_radius" />
+											</div>
+										</div>
+										<div id = "step3_border">
+											<span>Граница(border):</span>
+											<div class="formRow">
+												<p>Толщина:</p>
+												<div class="field">
+													<input type="text" class = "normal_field dop_in" name="bottom_m" id="border_px" />
+												</div>
+											</div>
+											<div class="formRow">
+												<p>Цвет:</p>
+												<input type="text" class = "normal_field colorwell dop_in dop_color" name="bottom_m" id="border_color" value="#123456"/>
+											<span>Стиль:</span>
+											</div>
+										</div>
+											<div class="button_step3" id="grad_button"><%=image_tag("img/grad.png", :title => "Добавить градиент")%></div>
+											<div class="button_step3" id="pattern_button"><%=image_tag("img/pattern.png", :title => "Добавить узор")%></div><br>
+											<div id="hide">
+												<div id="hide_grad">
+													<div class="formRow">
+														<span>Градиент:</span>
+														<p>От:</p>
+														<input type="text" class = "normal_field colorwell dop_in dop_color" name="bottom_m" id="grad_ot" value="#123456" />
+														<p>До:</p>
+														<input type="text" class = "normal_field colorwell dop_in dop_color" name="bottom_m" id="grad_do" value="#123456" />
+													</div>
+												</div>
+												<div id="hide_pattern">
+													<div id="list_pattern">
+														<div id="pattern1" class="pattern"></div>
+														<div id="pattern2" class="pattern"></div>
+														<div id="pattern3" class="pattern"></div>
+														<div id="pattern4" class="pattern"></div>
+														<div id="pattern5" class="pattern"></div>
+														<div id="pattern6" class="pattern"></div>
+														<div id="pattern7" class="pattern"></div>
+														<div id="pattern8" class="pattern"></div>
+														<div id="pattern9" class="pattern"></div>
+														<div id="pattern10" class="pattern"></div>
+														<div id="pattern11" class="pattern"></div>
+														<div id="pattern12" class="pattern"></div>
+														<div id="pattern13" class="pattern"></div>
+														<div id="pattern14" class="pattern"></div>
+														<div id="pattern15" class="pattern"></div>
+														<div id="pattern16" class="pattern"></div>
+													</div>
+
+													<div class="formRow">
+														<div id="pat_col">
+															<p>Цвет узора:</p>
+															<input type="text" class = "normal_field colorwell dop_in dop_color" name="bottom_m" id="pattern_color" value="#123456" />
+														</div>
+													</div>
+												</div>
+											</div>
+										<div  class="large button blue centr" id="add_3">Применить</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+            </div><!-- box3 -->
+
+            <div id="box4" class="box">
+            	<a name="box4"></a>
+                <div class="content wider">
+					<div class="inner wider">Шаг 4
+						<div class="hideWrap">
+							<a class="hideBtn" href="#"></a>
+							<div class="hideCont">
+								<textarea id = "text">
+
+								</textarea>
+
+								<div  class="large button blue centr2" id="add_4">Применить</div>
+							</div>
+							<button id = "button">СОХРАНИТЬ САЙТ</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- box4 -->
+        </div><!-- mask -->
+    </div><!-- wrapper -->
+
+
+<div id = "loading">LOADING</div>
+<div id = "main">
+    <div id="columns">
+
+		<div id = "head_columns">
+		  <div id="column_head" class = "column">
+			  <div id ="column_head_1" class="widget color-blue normal_widget"></div>
+		  </div>
+	  </div>
+
+
+    <div id = "central_columns" class = "align_center">
+        <div id="column_left" class="column margin_left">
+            <div id ="column_left_1" class="widget color-blue normal_widget "></div>
+            <div id ="column_left_2" class="widget color-blue normal_widget"></div>
+        </div>
+
+        <div id="column_center" class="column">
+            <div id ="column_center_1" class="widget color-blue normal_widget"></div>
+            <div id ="column_center_2" class="widget color-blue normal_widget"></div>
+        </div>
+
+        <div id="column_right" class="column margin_right">
+            <div id ="column_right_1" class="widget color-blue normal_widget"></div>
+            <div id ="column_right_2" class="widget color-blue normal_widget"></div>
+
+        </div>
+	</div>
+
+	<div id = "footer_columns">
+		   <div id="column_footer" class="column">
+            <div id ="column_footer_1" class="widget color-blue normal_widget"></div>
+       </div>
+   </div>
+
+    </div>
+
+</div>
+
+<!--<div id = "js_block">
+
+<%= javascript_include_tag "js_vender/jquery-ui-personalized-1.6rc2.min" %>
+<%= javascript_include_tag "js_vender/inettuts" %>
+</div>-->
+
+	<!--<div id="cloud1" class="clouds">
+    	<div id="clouds-small"></div>
+    </div> clouds --
+    <div id="cloud2" class="clouds">
+        <div id="clouds-big"></div>
+    </div>-- clouds -->
+    <ul id="menu">
+       	    <li><a href="#box1" class="link" id="step1">Шаг 1</a></li>
+            <li><a href="#box2" class="link" id="step4">Шаг 2</a></li>
+            <li><a href="#box3" class="link" id="step4">Шаг 3</a></li>
+            <li><a href="#box4" class="link" id="step4">Шаг 4</a></li>
+    </ul>

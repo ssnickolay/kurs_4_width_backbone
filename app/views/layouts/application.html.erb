@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+	<% if !site_show? && !site_new? %> 	<%= render "heads/head" %>     <% end %>
+	<% if site_new? %>                	<%= render "heads/new_head" %> <% end %>
+	<% if site_show? %>					<%= render "heads/show_head" %><% end %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if !site_show? && !site_new? %>
+		<%= render "layouts/header" %>
+	<% end %>
+	<section class="round w1100">
+		<% flash.each do |key, value| %>
+			<div class="flash <%= key %>"><%= value %></div>
+		<% end %>
+		<%= yield %>
+	</section>
+	<% if !site_show? %>
+		<%= debug(params) if Rails.env.development? %>	
+	<% end %>
+</body>
+</html>

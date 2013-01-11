@@ -1,0 +1,10 @@
+class Sv.Views.StepsIndex extends Backbone.View
+
+  template: JST['steps/index']
+
+  template_buttons: JST['steps/step1_buttons']
+
+  initialize: (attr) ->
+    $('.widget').each(->
+      $(this).append(Sv.Views.StepsIndex.template_buttons())
+    )

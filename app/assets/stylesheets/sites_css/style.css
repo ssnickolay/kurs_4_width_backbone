@@ -1,0 +1,47 @@
+body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none; font-family:Arial, Helvetica, sans-serif;}
+.ui-datepicker{width:auto;}
+body{
+font-size:0.8em; 
+font-family:Arial,Verdana,Sans-Serif;
+height: 100%;
+background:url("../img/pattern/pattern4.png") repeat;
+background-color:#ccc;
+}
+
+a {color:white;}
+
+/*----------Dobavit'------------- */	
+.round{ 
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+	border-radius:5px 5px 5px 5px;
+}
+
+.margin_auto{margin:0 auto; }
+
+button{height:100%; width:100%;}
+
+.color-blue   {background:#148ea4;}
+
+#columns{
+	background:#eff4fa;
+}
+#columns .column {
+	float: left;
+}
+#main{
+	width:1000px; height:680px;
+	background:url("../img/pattern/pattern8.png") repeat;
+	background-color:#0e5a87;
+	border: 2px solid #fff; 
+}
+#columns #column_head{width:100%;}
+#columns #column_right{width:200px;}
+#columns #column_left{width:169px; margin-left:4px;}
+#columns #column_center{ width:600px;}
+#columns #column_footer{width:100%;}
+
+#columns #column_head_1 {height:100%; width:990px;}
+#columns #column_left_1 {height:70px; margin-top:40%;}
+#columns #column_center_1 {height:400px;}
+#columns #column_footer_1 {height:100%; width:990px; margin-bottom:20px;}								

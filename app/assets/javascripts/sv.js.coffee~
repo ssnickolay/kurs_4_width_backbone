@@ -1,0 +1,48 @@
+window.Sv =
+  Models: {}
+  Collections: {}
+  Views: {}
+  Routers: {}
+  init: ->
+    new Sv.Routers.Steps()
+    new Sv.Views.StepsIndex()
+    Backbone.history.start({pushState: true})
+
+
+$(document).ready ->
+  Sv.init()
+  @columns = new Sv.Collections.Columns()
+  show_view = new Sv.Views.AppShow()
+
+  step1_model = new Sv.Models.Step1(collection:@columns, show:show_view)
+  columns_index_view = new Sv.Views.ColumnsIndex(collection:@columns)
+  step1_view = new Sv.Views.StepsStep1({collection:@columns, model:step1_model, columns_index: columns_index_view})
+  app = new Sv.Views.AppsApp({collection:@columns, step1_view:step1_view}) #отвечает за глобальные события
+
+
+
+
+
+
+
+
+
+  #columns.init()
+
+  #c = new Sv.Models.Column('nickname':'Vasia', 'left':20)
+  #c.init()
+
+  #d = new Sv.Views.ColumnsIndex({model:c});
+  #c.set({'nickname':'K'})
+  #c.set({'left':10})
+
+  #alert (c.get('left'))
+  #c = columns.findColumnById("#main");
+  #d = c.get("nickname")
+  #d = columns.size()
+  #alert d
+
+
+  #c = new Sv.Models.Column()
+  #c.init()
+  #alert(c.get("delete_"))

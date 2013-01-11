@@ -1,0 +1,9 @@
+﻿<h1>Изменить данные</h1>
+
+<%= form_for(@user) do |f| %>
+	<%= render "fields", :f => f %>
+	<div class="actions">
+		<%= f.submit "Ok","class" => "actions2" %>
+	</div>
+
+ <% end %>

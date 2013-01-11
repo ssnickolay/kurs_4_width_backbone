@@ -1,0 +1,83 @@
+class SitesController < ApplicationController
+include SitesHelper
+
+
+  before_filter :authenticate, :only => [:create, :destroy, new]
+  before_filter :authorized_user, :only => :destroy
+
+
+  def index
+	@title = "All User"
+	@sites = Site.paginate(:page => params[:page])
+  end
+
+
+  def show
+	@site = Site.find(params[:id])
+	@title = @site.title
+	@site_show = true
+	create_css(@site)
+  end
+
+  def new_preview
+	@site = Site.new
+	@title = "Input title"
+  end
+
+  def new
+	@site = Site.new
+	@site_new = true
+	@title = "Sozdanie saita"
+	@site_title = params[:site][:title]
+
+	@user = current_user
+	@pictures = @user.pictures.paginate(:page => params[:page])
+	@picture = Picture.new
+  end
+
+  def create
+	@user = current_user
+	@pictures = @user.pictures.paginate(:page => params[:page])
+	@site = @user.sites.build(params[:site])
+	if @site.save
+		flash[:success] = "Site Created!"
+		redirect_to @site
+	else
+		flash[:success] = "Nooo =_="
+		redirect_to newsite_preview_path
+	end
+  end
+
+  def edit
+	@site = current_user.sites.find(params[:id])
+	@title = "Edit Site"
+  end
+
+
+
+  def update
+	   @site = Site.find(params[:id])
+	    if @site.update_attributes(params[:site])
+			flash[:success] = "Site update"
+			redirect_to current_user
+		else
+			@title = "Edit user"
+			render 'edit'
+		end
+	end
+
+
+  def destroy
+	@site.destroy
+	redirect_back_or root_path
+  end
+
+
+
+  private
+
+    def authorized_user
+		@site = current_user.sites.find_by_id(params[:id])
+		redirect_to root_path if @site.nil?
+	end
+end

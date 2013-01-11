@@ -1,0 +1,20 @@
+﻿<h1>Все cайты:</h1>
+<%= will_paginate %>
+<ul class="users round">
+    <% @sites.each do |site| %>
+		<li class="round">
+			<%= image_tag("avatars/avatar.png", :size=>"50x50") %>
+			<span class="title">
+				<%= link_to site.title, site, :target => "_BLANK" %>
+			</span>
+			<% if current_user.admin? %>
+				<br>
+				<span class="delete">
+					<%= link_to "Удалить", site, :method => :delete, :confirm => "Вы уверены?", :title => "Удалить пользователя #{site.title}" %>
+				</span>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate %>

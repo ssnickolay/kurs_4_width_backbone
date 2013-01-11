@@ -1,0 +1,11 @@
+﻿<h1>Войдите</h1>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<%= render 'shared/session_new', :f => f %>
+<div class = "action">
+	<%= f.submit "Войти" %>
+</div>
+
+<% end %>
+
+<p> Вы еще не зарегистрировались? <%= link_to "Зарегистрируйтесь сейчас!", signup_path %>

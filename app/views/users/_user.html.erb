@@ -1,0 +1,12 @@
+﻿<li class="round">
+    <%= image_tag("avatars/avatar.png", :size=>"50x50") %>
+	<span class="site_name">
+		<%= link_to "Свадебный сайт Лены и Марины", "#" %>
+	</span>
+	<br>
+	<% if current_user.admin? %>
+		<span class="delete">
+			<%= link_to "Удалить", user, :method => :delete, :confirm => "Вы уверены?", :title => "Удалить пользователя #{user.name}" %>
+		</span>
+	<% end %>
+</li>

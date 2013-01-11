@@ -1,0 +1,39 @@
+@import 'bourbon'; .shadow{@include box-shadow(0 0 2px 2px hsla(0, 0%, 0%, 0.65))};.glow{@include box-shadow(0px 0px 4px 4px #fffbc7)};@import 'app/assets/custom-theme/yellow/jquery-ui-1.8.19.custom.css';body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none; font-family:Arial, Helvetica, sans-serif;}
+					.ui-datepicker{width:auto;}
+					body {font-size:0.8em; font-family:Arial,Verdana,Sans-Serif;height: 100%;
+					 background:url("../img/pattern/pattern4.png") repeat;
+					 background-color:#ccc;}
+					a {color:white;}
+					.round{
+					-moz-border-radius:5px 5px 5px 5px;
+					-webkit-border-radius:5px 5px 5px 5px;
+					border-radius:5px 5px 5px 5px;
+					}
+					.color-blue   {background:#148ea4;}
+					#columns{
+					background:#eff4fa;
+					}
+					#columns .column {
+					float: left;
+					padding: 2px;
+					margin:5px 5px 0px 0px;
+					}
+					#main{
+					 width:1000px; margin:0 auto;  height:680px;
+					 background:url("../img/pattern/pattern8.png") repeat;
+					 background-color:#0e5a87;
+					 border: 2px solid #fff; 
+					 }
+					#columns #column_head{width:99.5%;}
+					#columns #column_head_1 {height:200px; width:990px; margin:0px auto; 
+					background: url("../images/header_bg.png");}
+					#columns #column_right{width:200px;}
+					#columns #column_left{width:169px; margin-left:4px;}
+					#columns #column_left_1 {height:70px; margin:40% auto;}
+					#columns #column_left_1 button{width:100%; height:100%}
+					#columns #column_center{ width:600px;}
+					#columns #column_center_1 {height:400px;}
+					#columns #column_center_1 .run_tabs{width:100%; height:100%}
+					#columns #column_footer{width:99.5%;}
+					#columns #column_footer_1 {height:40px; width:990px; margin:0px auto; margin-bottom:20px;
+					background: url("../images/footer_bg.png");}

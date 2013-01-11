@@ -1,0 +1,12 @@
+<% unless @user.pictures.empty? %>
+    <table class="pictures1" summary="User pictures">
+	<tr>
+		<th>Картинка:</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+        <%= render @pictures %>
+    </table>
+<%= will_paginate @pictures %>
+<% end %>

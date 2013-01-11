@@ -1,0 +1,101 @@
+﻿/* JS-Enabled CSS */
+.move  {
+    float: right;
+    display: inline;
+    margin:4px 2px;
+	margin-top:-26px;
+    outline: none;
+}
+div.remove  {
+    background: url(../img/remove.png) no-repeat ;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+   /* text-indent: -9999em;
+    outline: none; */
+    cursor:pointer;
+}
+
+div.plus  {
+    background: url(../img/plus.jpeg) no-repeat ;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+   /* text-indent: -9999em;
+    outline: none; */
+    cursor:pointer;
+}
+div.focus{
+    background: url(../img/move.png) no-repeat ;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+   /* text-indent: -9999em;
+    outline: none; */
+    cursor:pointer;
+}
+
+div.plus2{
+    background: url(../img/plus.jpeg) no-repeat ;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+   /* text-indent: -9999em;
+    outline: none; */
+    cursor:pointer;
+}
+
+.selected_total{
+
+}
+.action {
+    width:1px;
+    height:90px;
+    float:right;
+    position:relative;
+    display:none;
+}
+
+.action_buttons{width:24px;height:90px;}
+
+.widget-content h3{
+    color:#fff;
+}
+
+.widget-placeholder { border: 2px dashed #999;}
+#column1 .widget-placeholder { margin: 30px 35px 0 25px; }
+#column2 .widget-placeholder { margin: 30px 20px 0 20px; }
+#column3 .widget-placeholder { margin: 30px 25px 0 35px; }
+
+.edit-box {
+    overflow: hidden;
+    background: #333 url(../img/widget-content-bg.png) repeat-x;
+    margin-bottom: 2px;
+    padding: 10px 0;
+}
+
+.edit-box li.item {
+    padding: 10px 0;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+
+.edit-box label {
+    float: left;
+    width: 30%;
+    color: #FFF;
+    padding: 0 0 0 10px;
+}
+
+.edit-box ul.colors li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #EEE;
+    float: left;
+    display: inline;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}

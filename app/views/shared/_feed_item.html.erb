@@ -1,0 +1,12 @@
+﻿<tr>
+	<td class = "avatar">
+	</td>
+	
+	<td class = "site">
+		<span class = "title"><%= link_to feed_item.title, feed_item, :target => "_BLANK" %></span>
+		<span class = "timestamp">
+			Created <%= time_ago_in_words(feed_item.created_at) %> ago.
+		</span>
+	</td>
+</tr>
+		

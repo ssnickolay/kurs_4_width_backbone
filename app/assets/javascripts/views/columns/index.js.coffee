@@ -1,0 +1,32 @@
+class Sv.Views.ColumnsIndex extends Backbone.View
+  template: JST['columns/index']
+
+  el: '#box1'
+
+
+
+  initialize: ->
+    #this.model.on('change', this.render, this);
+    @setValueToInput(1)
+
+
+  #render: ->
+    #alert ($('#site').attr('name'))
+
+
+  setValueToInput: (root_id) ->
+    $('.selected_column').removeClass('selected_column')
+    $('.selected_total').removeClass('selected_total')
+    $('.change_column').removeClass('change_column')
+
+    flag = true
+    collection = @collection
+    $('#marg')[0].value = @collection.margin
+    $('#box1 :input').each(()->
+      column = collection.where('type':$(this).attr('id'), 'root_id':root_id)[0]
+      if column
+        $(this)[0].value = column.get('width') # Заполняем поля инпут значениями коллекции
+        $(column.get('id')).find('.widget').addClass('selected_column')
+    )
+    $('#total')[0].value = @collection.findByTreeId(root_id).get('width')
+    $(@collection.findByTreeId(root_id).get('id')).addClass('selected_total')

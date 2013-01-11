@@ -1,0 +1,32 @@
+﻿<section>
+	<% if signed_in? %>
+		<table class = "front" summary="For signed-in users "/>
+			<tr>
+				<td class = "main">
+					<h1 class = "site">Создай свой уникальный сайт!</h1>
+					<%= link_to "", newsite_preview_path, :id => "button_create"%>
+					<h1 class = "site">Ваши сайты:</h1>
+					<%= render 'shared/feed' %>
+				</td>
+				<td class = "sidebar round">
+					<%= render 'shared/user_info' %>
+				</td>
+			</tr>
+		</table>
+	<% else %>
+	
+	<div id='block'>
+		<div id="fieldContainer" class="round">
+			<%= form_for(:session, :url => sessions_path) do |f| %>
+				<%= render 'shared/session_new', :f => f %>
+		</div>
+		<nav>
+			<span id="submit">
+				<%= f.submit :id => "button1"%>
+			</span>
+			<% end %>	
+			<%= link_to "", signup_path, :id => "button2"%>
+		</nav>
+	</div>
+	<% end %>
+</section>

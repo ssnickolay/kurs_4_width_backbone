@@ -1,0 +1,27 @@
+class Sv.Models.Column extends Backbone.Model
+
+	#init: ->
+    #if (!this.get("delete_"))
+     # this.set("delete_": 0);
+
+
+
+  initialize: ->
+    this.on('change:width', (model, value)-> changeWidth(model, value))
+    this.on('change:delete_', (model, value)-> changeDelete(model, value))
+    this.on('error', (model, error)-> printError(model,error))
+
+  validate: (attr) ->
+    if(attr.width < 0)
+      return "Отрицательное значение невозможно"
+
+  printError= (model,error)-> alert (error)  #Функция вывода ошибки
+
+  changeWidth= (model, value)->
+    $(model.id).width(value)
+
+
+  changeDelete= (model, value)->
+    model.destroy()
+    input_id = model.id.split('_')[1] # model.id = #column_left, input_id = #left
+    #$("#" + input_id).click()#.attr('disabled', 'disabled').addClass('disabled').css('color', '#ccc')#удалить

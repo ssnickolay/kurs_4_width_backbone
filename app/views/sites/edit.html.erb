@@ -1,0 +1,8 @@
+﻿<h1>Редактировать сайт</h1>
+
+<%= form_for(@site) do |f| %>
+	<%= render "new_site_form", :f => f %>
+	<div class="actions">
+		<%= f.submit "Ok","class" => "actions2" %>
+	</div>
+ <% end %>
